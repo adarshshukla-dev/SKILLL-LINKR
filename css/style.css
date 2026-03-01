@@ -1,49 +1,148 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background: #111827;
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #3b82f6;
+}
+
+/* Hero Section */
+.hero {
+  height: 90vh;
+  background: linear-gradient(to right, #2563eb, #1e3a8a);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-header {
-  background: #1e3a8a;
-  color: white;
-  padding: 15px;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-.hero {
-  padding: 60px;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
 .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #2563eb;
-  color: white;
+  padding: 12px 25px;
+  background: white;
+  color: #2563eb;
+  border-radius: 30px;
   text-decoration: none;
-  margin: 10px;
-  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.form-container {
-  margin-top: 100px;
+.btn:hover {
+  background: #e5e7eb;
 }
 
-input, textarea {
-  display: block;
-  margin: 10px auto;
-  padding: 8px;
-  width: 250px;
+/* Cards */
+.container {
+  padding: 60px 8%;
 }
 
 .card {
-  border: 1px solid #ddd;
+  background: white;
   padding: 20px;
-  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Forms */
+.form-container {
+  width: 350px;
+  margin: 80px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  background: #111827;
+  height: 100vh;
+  padding: 20px;
+  color: white;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 15px 0;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #3b82f6;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
 }
