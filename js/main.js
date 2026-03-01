@@ -1,7 +1,6 @@
-function login() {
-  alert("Login functionality will be connected to backend later.");
-}
+console.log("Skill Linkr Loaded Successfully 🚀");
 
-function register() {
-  alert("Registration functionality will be connected to backend later.");
+// Example future feature placeholder
+function showNotification(message) {
+  alert(message);
 }
