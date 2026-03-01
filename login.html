@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>Login - SkillLinkr</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="center-box">
+<header>
+  <div class="logo">SkillLinkr</div>
+</header>
+
+<section class="container">
   <h2>Login</h2>
-  <input type="email" placeholder="Email">
-  <input type="password" placeholder="Password">
-  <button onclick="redirectDashboard()">Login</button>
-  <p>Don't have account? <a href="register.html">Register</a></p>
-</div>
+
+  <form class="form" onsubmit="handleLogin(event)">
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button class="btn">Login</button>
+  </form>
+
+</section>
 
 <script src="js/main.js"></script>
 </body>
