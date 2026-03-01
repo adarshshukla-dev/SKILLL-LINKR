@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Select Role</title>
+  <title>Select Role - SkillLinkr</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="role-container">
-  <h2>Select Your Role</h2>
-  <a href="dashboards/student-dashboard.html" class="btn">I'm a Student</a>
-  <a href="dashboards/client-dashboard.html" class="btn">I'm a Client</a>
-</div>
+<header>
+  <div class="logo">SkillLinkr</div>
+</header>
 
+<section class="container">
+  <h2>Select Your Role</h2>
+
+  <div class="grid-3">
+
+    <div class="card role-card" onclick="selectRole('admin')">
+      <h3>👑 Admin</h3>
+      <p>Platform manager</p>
+    </div>
+
+    <div class="card role-card" onclick="selectRole('client')">
+      <h3>💼 Client</h3>
+      <p>Post projects</p>
+    </div>
+
+    <div class="card role-card" onclick="selectRole('student')">
+      <h3>🎓 Student</h3>
+      <p>Apply & Earn</p>
+    </div>
+
+  </div>
+</section>
+
+<script src="js/main.js"></script>
 </body>
 </html>
