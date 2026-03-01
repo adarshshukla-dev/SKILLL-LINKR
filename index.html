@@ -1,4 +1,9 @@
+/* =============================
+   SkillLinkr Web Prototype
+   Starter Code Package
+   ============================= */
 
+/* -------- index.html -------- */
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,12 +139,102 @@ function client(){ window.location.href='client-dashboard.html'; }
 </body>
 </html>
 
-/* -------- css/style.css -------- */
-body{font-family:Arial;background:#f5f5f5;text-align:center}
-.navbar{background:#000;color:#fff;padding:10px}
-.hero{margin-top:100px}
-.btn{background:orange;color:#000;padding:10px 20px;text-decoration:none;margin:5px;display:inline-block}
-.box{margin-top:100px}
-.role-box button{padding:15px 30px;margin:10px}
-.card{background:#fff;margin:20px;padding:20px;border-radius:10px}
+/* -------- css/style.css (Upgraded UI) -------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
+  color:#fff;
+  min-height:100vh;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+}
+
+.navbar h1{color:#ff9900;font-weight:700}
+
+.hero{
+  height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h2{font-size:48px;margin-bottom:10px}
+.hero p{font-size:18px;color:#ccc;margin-bottom:25px}
+
+.btn{
+  background:linear-gradient(135deg,#ff9900,#ffb347);
+  color:#000;
+  padding:12px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+  display:inline-block;
+}
+
+.btn:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(255,153,0,0.6)}
+
+.box{
+  width:350px;
+  margin:120px auto;
+  padding:30px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 0 30px rgba(0,0,0,0.5);
+}
+
+.box h2{margin-bottom:20px}
+
+.box input, textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:10px;
+  outline:none;
+}
+
+.role-box{
+  display:flex;
+  justify-content:center;
+  margin-top:120px;
+}
+
+.role-box button{
+  margin:20px;
+  padding:20px 40px;
+  border-radius:20px;
+  border:none;
+  background:linear-gradient(135deg,#ff9900,#ffb347);
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.role-box button:hover{transform:scale(1.1)}
+
+.card{
+  background:rgba(255,255,255,0.06);
+  margin:30px auto;
+  padding:25px;
+  width:320px;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+
+h2{text-align:center;margin-top:40px}
