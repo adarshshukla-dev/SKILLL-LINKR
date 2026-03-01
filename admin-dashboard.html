@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - SkillLinkr</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="admin-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Admin Panel</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Manage Users</a>
+    <a href="#">Manage Projects</a>
+    <a href="#">Reports</a>
+    <a href="index.html">Logout</a>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+
+    <header class="admin-header">
+      <h1>Welcome Admin 👋</h1>
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+    </header>
+
+    <!-- Stats -->
+    <section class="admin-stats">
+
+      <div class="admin-card" data-aos="fade-up">
+        <h3>Total Users</h3>
+        <p>120</p>
+      </div>
+
+      <div class="admin-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Total Projects</h3>
+        <p>45</p>
+      </div>
+
+      <div class="admin-card" data-aos="fade-up" data-aos-delay="400">
+        <h3>Active Projects</h3>
+        <p>18</p>
+      </div>
+
+    </section>
+
+    <!-- Project Table -->
+    <section class="admin-table-section" data-aos="fade-up">
+
+      <h2>Recent Projects</h2>
+
+      <table class="admin-table">
+        <tr>
+          <th>Project</th>
+          <th>Client</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+
+        <tr>
+          <td>Website Design</td>
+          <td>Rohit</td>
+          <td>Pending</td>
+          <td>
+            <button class="approve-btn">Approve</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>App Development</td>
+          <td>Anjali</td>
+          <td>Active</td>
+          <td>
+            <button class="approve-btn">Approve</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+
+      </table>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 1000, once: true });
+</script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
