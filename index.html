@@ -10,7 +10,7 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar">
+<nav class="navbar" data-aos="fade-down">
   <h2>Skill Linkr</h2>
   <div>
     <a href="#about">About</a>
@@ -22,27 +22,27 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Connecting Skills with Opportunities</h1>
-  <p>India’s Student Freelancing Platform</p>
-  <a href="register.html" class="btn">Get Started</a>
+  <h1 data-aos="fade-up">Connecting Skills with Opportunities</h1>
+  <p data-aos="fade-up" data-aos-delay="200">India’s Student Freelancing Platform</p>
+  <a href="register.html" class="btn" data-aos="zoom-in" data-aos-delay="400">Get Started</a>
 </section>
 
 <!-- How It Works -->
 <section class="container">
-  <h2>How It Works</h2>
+  <h2 data-aos="fade-up">How It Works</h2>
 
   <div class="grid">
-    <div class="card">
+    <div class="card" data-aos="fade-right">
       <h3>Post Projects</h3>
       <p>Clients post projects with budget & deadline.</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <h3>Students Apply</h3>
       <p>Talented students send proposals.</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-left">
       <h3>Complete & Earn</h3>
       <p>Finish work and build your portfolio.</p>
     </div>
@@ -51,9 +51,9 @@
 
 <!-- About Section -->
 <section class="container" id="about">
-  <h2>About Skill Linkr</h2>
+  <h2 data-aos="fade-up">About Skill Linkr</h2>
 
-  <div class="card">
+  <div class="card" data-aos="zoom-in">
     <p>
       Skill Linkr is a student-focused freelancing platform designed to connect
       talented students with real-world projects from businesses and startups.
@@ -69,35 +69,37 @@
 
 <!-- Contact Section -->
 <section class="container" id="contact">
-  <h2>Contact Us</h2>
+  <h2 data-aos="fade-up">Contact Us</h2>
 
   <div class="grid">
-    <div class="card">
+    <div class="card" data-aos="fade-right">
       <h3>Get In Touch</h3>
       <p>Email: info@skilllinkr.in</p>
       <p>Location: Uttar Pradesh, India</p>
       <p>Phone: +91 XXXXX XXXXX</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-left">
       <h3>Send a Message</h3>
-      <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Your Email">
-      <textarea placeholder="Your Message"></textarea>
-      <button>Send Message</button>
+      <input type="text" placeholder="Your Name" data-aos="fade-up">
+      <input type="email" placeholder="Your Email" data-aos="fade-up" data-aos-delay="100">
+      <textarea placeholder="Your Message" data-aos="fade-up" data-aos-delay="200"></textarea>
+      <button data-aos="zoom-in" data-aos-delay="300">Send Message</button>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer>
+<footer data-aos="fade-up">
   © 2026 Skill Linkr | Empowering Student Freelancers
 </footer>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
 AOS.init({
   duration: 1000,
-  once: true
+  once: true,
+  easing: 'ease-in-out'
 });
 </script>
 
