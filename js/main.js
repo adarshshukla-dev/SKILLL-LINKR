@@ -1,6 +1,11 @@
-console.log("Skill Linkr Loaded Successfully 🚀");
+function redirectDashboard() {
+  const role = document.getElementById("role");
 
-// Example future feature placeholder
-function showNotification(message) {
-  alert(message);
+  if (role && role.value === "student") {
+    window.location.href = "dashboards/student-dashboard.html";
+  } else if (role && role.value === "client") {
+    window.location.href = "dashboards/client-dashboard.html";
+  } else {
+    window.location.href = "dashboards/student-dashboard.html";
+  }
 }
