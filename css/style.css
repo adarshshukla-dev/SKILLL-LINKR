@@ -298,47 +298,4 @@ footer {
     width: 90%;
   }
 }
-/* Smooth transition */
-body {
-  transition: background 0.4s ease, color 0.4s ease;
-}
 
-/* Dark Mode Styles */
-.dark-mode {
-  background: #0f172a;
-  color: #f1f5f9;
-}
-
-.dark-mode header {
-  background: #020617;
-}
-
-.dark-mode .card {
-  background: #1e293b;
-  color: white;
-}
-
-.dark-mode footer {
-  background: #020617;
-}
-
-.dark-mode .hero {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-}
-
-/* Toggle Button Style */
-.theme-toggle {
-  margin-left: 20px;
-  padding: 6px 10px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  background: #2563eb;
-  color: white;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-}
