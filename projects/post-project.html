@@ -1,21 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Post Project</title>
+  <meta charset="UTF-8">
+  <title>Post a Project - Skill Linkr</title>
   <link rel="stylesheet" href="../css/style.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-<div class="center-box">
-  <h2>Post a Project</h2>
+<!-- Navbar -->
+<nav class="navbar">
+  <h2>Skill Linkr</h2>
+  <a href="../index.html" class="nav-btn">Home</a>
+</nav>
 
-  <input type="text" placeholder="Project Title">
-  <textarea placeholder="Project Description"></textarea>
-  <input type="number" placeholder="Budget ₹">
-  <input type="date">
+<section class="container">
 
-  <button>Submit Project</button>
-</div>
+  <h2 data-aos="fade-up">Post a New Project</h2>
+  <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+    Describe your project and hire talented students
+  </p>
+
+  <div class="card" data-aos="zoom-in">
+
+    <form>
+
+      <!-- Project Title -->
+      <label>Project Title</label>
+      <input type="text" placeholder="e.g. Build Landing Page Website" required>
+
+      <!-- Category -->
+      <label>Category</label>
+      <select required>
+        <option value="">Select Category</option>
+        <option>Web Development</option>
+        <option>Graphic Design</option>
+        <option>App Development</option>
+        <option>Content Writing</option>
+        <option>Digital Marketing</option>
+      </select>
+
+      <!-- Description -->
+      <label>Project Description</label>
+      <textarea placeholder="Explain your requirements clearly..." required></textarea>
+
+      <!-- Budget & Deadline -->
+      <div class="form-row">
+        <div>
+          <label>Budget (₹)</label>
+          <input type="number" placeholder="Enter amount" required>
+        </div>
+
+        <div>
+          <label>Deadline</label>
+          <input type="date" required>
+        </div>
+      </div>
+
+      <!-- File Upload -->
+      <div class="form-group">
+        <label>Attach Reference File (Optional)</label>
+        <input type="file">
+      </div>
+
+      <!-- Terms -->
+      <div class="form-group terms">
+        <label>
+          <input type="checkbox" required>
+          I confirm the project details are accurate.
+        </label>
+      </div>
+
+      <button class="btn full-btn">Submit Project 🚀</button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2026 Skill Linkr | Empowering Student Freelancers
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 800,
+  once: true
+});
+</script>
 
 </body>
 </html>
