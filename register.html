@@ -1,29 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Register</title>
+  <meta charset="UTF-8">
+  <title>Register - Skill Linkr</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body class="auth-body">
 
-<div class="center-box">
-  <h2>Create Account</h2>
+<!-- Navbar Minimal -->
+<nav class="navbar">
+  <h2>Skill Linkr</h2>
+  <a href="index.html" class="nav-btn">Home</a>
+</nav>
 
-  <input type="text" placeholder="Full Name">
-  <input type="email" placeholder="Email">
-  <input type="password" placeholder="Password">
+<section class="auth-container">
 
-  <select id="role">
-    <option value="">Select Role</option>
-    <option value="student">Student</option>
-    <option value="client">Client</option>
-  </select>
+  <div class="auth-card" data-aos="zoom-in">
 
-  <button onclick="redirectDashboard()">Create Account</button>
+    <h2>Create Your Account 🚀</h2>
+    <p class="auth-subtitle">Join India’s Student Freelancing Platform</p>
 
-  <p>Already have account? <a href="login.html">Login</a></p>
-</div>
+    <form onsubmit="redirectDashboard(event)">
+
+      <!-- Full Name -->
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Full Name" required>
+      </div>
+
+      <!-- Email -->
+      <div class="input-group">
+        <i class="fa fa-envelope"></i>
+        <input type="email" placeholder="Email Address" required>
+      </div>
+
+      <!-- Password -->
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" id="password" placeholder="Password" required>
+        <i class="fa fa-eye toggle-password" onclick="togglePassword('password')"></i>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <i class="fa fa-eye toggle-password" onclick="togglePassword('confirmPassword')"></i>
+      </div>
+
+      <!-- Role Selection -->
+      <div class="role-select">
+        <label>Select Your Role</label>
+        <select id="role" required>
+          <option value="">Choose Role</option>
+          <option value="student">🎓 Student (Freelancer)</option>
+          <option value="client">💼 Client (Hire Talent)</option>
+        </select>
+      </div>
+
+      <button class="btn full-btn">Create Account</button>
+
+      <p class="redirect-text">
+        Already have an account?
+        <a href="login.html">Login</a>
+      </p>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2026 Skill Linkr | Empowering Student Freelancers
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 800,
+  once: true
+});
+
+function togglePassword(id) {
+  const input = document.getElementById(id);
+  input.type = input.type === "password" ? "text" : "password";
+}
+</script>
 
 <script src="js/main.js"></script>
+
 </body>
 </html>
