@@ -1,30 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Project Feed</title>
+  <meta charset="UTF-8">
+  <title>Project Feed - Skill Linkr</title>
   <link rel="stylesheet" href="../css/style.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar">
-  <h2>Available Projects</h2>
+  <h2>Skill Linkr</h2>
+  <a href="../index.html" class="nav-btn">Home</a>
 </nav>
 
-<div class="container">
-  <div class="card">
-    <h3>1 Page Website</h3>
-    <p>Budget: ₹4,000</p>
-    <p>Need business landing page.</p>
-    <a href="apply.html" class="btn">Apply</a>
+<section class="container">
+
+  <h2 data-aos="fade-up">Available Projects</h2>
+  <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+    Explore projects and start earning
+  </p>
+
+  <!-- Search & Filter -->
+  <div class="filter-bar" data-aos="fade-up" data-aos-delay="200">
+    <input type="text" placeholder="Search projects...">
+    <select>
+      <option>All Categories</option>
+      <option>Web Development</option>
+      <option>Graphic Design</option>
+      <option>App Development</option>
+      <option>Content Writing</option>
+    </select>
   </div>
 
-  <div class="card">
-    <h3>Logo Design</h3>
-    <p>Budget: ₹1,000</p>
-    <p>Modern brand logo required.</p>
-    <a href="apply.html" class="btn">Apply</a>
+  <!-- Project Grid -->
+  <div class="grid">
+
+    <!-- Project 1 -->
+    <div class="card project-card" data-aos="fade-right">
+      <h3>🌐 1 Page Website</h3>
+      <p>Need a modern business landing page with responsive design.</p>
+
+      <div class="project-meta">
+        <span>💰 ₹4,000</span>
+        <span>⏳ 5 Days</span>
+        <span>📂 Web Dev</span>
+      </div>
+
+      <a href="apply.html" class="btn small-btn">Apply Now</a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="card project-card" data-aos="fade-left">
+      <h3>🎨 Logo Design</h3>
+      <p>Looking for a minimal and modern brand logo.</p>
+
+      <div class="project-meta">
+        <span>💰 ₹1,000</span>
+        <span>⏳ 3 Days</span>
+        <span>📂 Design</span>
+      </div>
+
+      <a href="apply.html" class="btn small-btn">Apply Now</a>
+    </div>
+
   </div>
-</div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2026 Skill Linkr | Connecting Skills with Opportunities
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 800,
+  once: true
+});
+</script>
 
 </body>
 </html>
