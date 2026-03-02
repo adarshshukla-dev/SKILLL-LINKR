@@ -1,34 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Client Dashboard</title>
+  <meta charset="UTF-8">
+  <title>Client Dashboard - Skill Linkr</title>
   <link rel="stylesheet" href="../css/style.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- Top Navbar -->
+<nav class="navbar">
+  <h2>Skill Linkr</h2>
+  <a href="../index.html" class="nav-btn">Logout</a>
+</nav>
+
 <div class="dashboard">
+
+  <!-- Sidebar -->
   <div class="sidebar">
     <h3>Client Panel</h3>
+    <a href="#" class="active">Dashboard</a>
     <a href="../projects/post-project.html">Post Project</a>
-    <a href="../projects/project-feed.html">View Projects</a>
+    <a href="../projects/project-feed.html">Browse Freelancers</a>
   </div>
 
+  <!-- Main Content -->
   <div class="main">
-    <h2>Welcome Client 👋</h2>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Total Projects</h3>
-        <p>4</p>
+    <h2 data-aos="fade-down">Welcome Client 👋</h2>
+
+    <!-- Stats Section -->
+    <div class="grid" data-aos="fade-up">
+
+      <div class="card stat-card">
+        <h3>📁 Total Projects</h3>
+        <p class="stat-number">4</p>
       </div>
 
-      <div class="card">
-        <h3>Applications</h3>
-        <p>12</p>
+      <div class="card stat-card">
+        <h3>📨 Applications</h3>
+        <p class="stat-number">12</p>
       </div>
+
+      <div class="card stat-card">
+        <h3>⭐ Active Hires</h3>
+        <p class="stat-number">2</p>
+      </div>
+
     </div>
+
+    <!-- Recent Projects -->
+    <h3 class="section-title" data-aos="fade-up">Recent Projects</h3>
+
+    <div class="card" data-aos="fade-up">
+      <h4>Landing Page Design</h4>
+      <p>Budget: ₹5,000 | Deadline: 5 Days</p>
+      <span class="status active-status">Active</span>
+    </div>
+
+    <div class="card" data-aos="fade-up">
+      <h4>Logo Branding</h4>
+      <p>Budget: ₹1,200 | Completed</p>
+      <span class="status completed-status">Completed</span>
+    </div>
+
   </div>
 </div>
+
+<!-- Footer -->
+<footer>
+  © 2026 Skill Linkr | Client Dashboard
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 800,
+  once: true
+});
+</script>
 
 </body>
 </html>
