@@ -1,38 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Select Role - SkillLinkr</title>
+  <meta charset="UTF-8">
+  <title>Select Role - Skill Linkr</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-<header>
-  <div class="logo">SkillLinkr</div>
-</header>
+<!-- Navbar -->
+<nav class="navbar">
+  <h2>Skill Linkr</h2>
+  <a href="index.html" class="nav-btn">Home</a>
+</nav>
 
-<section class="container">
-  <h2>Select Your Role</h2>
+<section class="container role-section">
+
+  <h2 data-aos="fade-up">Choose Your Role</h2>
+  <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+    Select how you want to use the platform
+  </p>
 
   <div class="grid-3">
 
-    <div class="card role-card" onclick="selectRole('admin')">
-      <h3>👑 Admin</h3>
-      <p>Platform manager</p>
+    <!-- Admin -->
+    <div class="card role-card" onclick="selectRole('admin')" data-aos="fade-right">
+      <div class="role-icon">👑</div>
+      <h3>Admin</h3>
+      <p>Manage platform, users & approvals</p>
+      <button class="btn small-btn">Continue</button>
     </div>
 
-    <div class="card role-card" onclick="selectRole('client')">
-      <h3>💼 Client</h3>
-      <p>Post projects</p>
+    <!-- Client -->
+    <div class="card role-card" onclick="selectRole('client')" data-aos="zoom-in">
+      <div class="role-icon">💼</div>
+      <h3>Client</h3>
+      <p>Post projects & hire talented students</p>
+      <button class="btn small-btn">Continue</button>
     </div>
 
-    <div class="card role-card" onclick="selectRole('student')">
-      <h3>🎓 Student</h3>
-      <p>Apply & Earn</p>
+    <!-- Student -->
+    <div class="card role-card" onclick="selectRole('student')" data-aos="fade-left">
+      <div class="role-icon">🎓</div>
+      <h3>Student</h3>
+      <p>Apply for projects & build portfolio</p>
+      <button class="btn small-btn">Continue</button>
     </div>
 
   </div>
+
 </section>
 
+<!-- Footer -->
+<footer>
+  © 2026 Skill Linkr | Connecting Skills with Opportunities
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 800,
+  once: true
+});
+</script>
+
 <script src="js/main.js"></script>
+
 </body>
 </html>
