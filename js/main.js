@@ -134,3 +134,61 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+
+
+
+// Admin Dashboard Specific Features
+if (document.querySelector('.admin-container')) {
+  // Mobile Sidebar Toggle
+  const sidebar = document.querySelector('.sidebar');
+  const hamburger = document.createElement('div');
+  hamburger.innerHTML = '☰';
+  hamburger.className = 'admin-hamburger';
+  hamburger.style.cssText = `
+    position: fixed; top: 1rem; left: 1rem; z-index: 1002;
+    background: rgba(255,255,255,0.95); padding: 1rem; border-radius: 12px;
+    font-size: 1.5rem; cursor: pointer; backdrop-filter: blur(20px);
+    display: none;
+  `;
+  
+  document.body.appendChild(hamburger);
+  
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1024) {
+      hamburger.style.display = 'block';
+      sidebar.classList.remove('open');
+    } else {
+      hamburger.style.display = 'none';
+      sidebar.classList.add('open');
+    }
+  });
+  
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+  });
+  
+  // Theme Toggle
+  document.getElementById('themeToggle')?.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    showToast('Theme toggled!', 'success');
+  });
+  
+  // Table Actions
+  document.querySelectorAll('.approve-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.textContent = 'Approved ✓';
+      btn.style.background = '#059669';
+      showToast('Project approved!', 'success');
+    });
+  });
+  
+  document.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (confirm('Delete this project?')) {
+        btn.parentElement.parentElement.remove();
+        showToast('Project deleted!', 'error');
+      }
+    });
+  });
+}
+
