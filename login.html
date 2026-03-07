@@ -31,7 +31,7 @@
         <label>Email Address</label>
         <div class="input-field">
           <i class="fas fa-envelope"></i>
-          <input type="email" placeholder="name@example.com" required>
+          <input type="email" id="loginEmail" placeholder="name@example.com" required>
         </div>
       </div>
 
@@ -42,8 +42,8 @@
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" id="password" placeholder="••••••••" required>
-          <i class="fas fa-eye" style="cursor: pointer; margin-right: 0;" onclick="togglePassword()"></i>
+          <input type="password" id="loginPass" placeholder="••••••••" required>
+          <i class="fas fa-eye" style="cursor: pointer; margin-right: 0;" onclick="togglePassword('loginPass')"></i>
         </div>
       </div>
 
@@ -66,26 +66,9 @@
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="auth.js"></script>
 <script>
   AOS.init({ duration: 800, once: true });
-
-  function togglePassword() {
-    const passwordInput = document.getElementById("password");
-    const icon = event.target;
-    if (passwordInput.type === "password") {
-      passwordInput.type = "text";
-      icon.classList.replace("fa-eye", "fa-eye-slash");
-    } else {
-      passwordInput.type = "password";
-      icon.classList.replace("fa-eye-slash", "fa-eye");
-    }
-  }
-
-  function handleLogin(e) {
-    e.preventDefault();
-    // Yahan aap apna login logic ya redirection daal sakte hain
-    alert("Login logic triggered!");
-  }
 </script>
 
 </body>
