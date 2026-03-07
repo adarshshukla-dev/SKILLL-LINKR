@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post a Project | Skill Linkr</title>
+  <link rel="stylesheet" href="dashboard-common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    .form-card { background: var(--white); padding: 2.5rem; border-radius: 24px; border: 1px solid var(--border); max-width: 800px; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; font-weight: 700; margin-bottom: 8px; color: var(--dark); }
+    .form-control { width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-body); font-family: inherit; outline: none; transition: 0.3s; }
+    .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+    .btn-publish { background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 12px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.3s; margin-top: 10px; }
+    .btn-publish:hover { background: var(--dark); transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo"><h2><span>Skill</span> Linkr</h2></div>
+    <nav class="sidebar-menu">
+      <a href="client-dashboard.html" class="menu-item"><i class="fas fa-th-large"></i> <span>Dashboard</span></a>
+      <a href="post-project.html" class="menu-item active"><i class="fas fa-plus-circle"></i> <span>Post Project</span></a>
+      <a href="#" class="menu-item"><i class="fas fa-folder-open"></i> <span>My Projects</span></a>
+    </nav>
+    <div class="sidebar-footer"><a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></div>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="welcome-text">
+        <h1 data-aos="fade-down">Post a New Project 📝</h1>
+        <p>Describe what you need and find the best student talent.</p>
+      </div>
+    </header>
+
+    <div class="form-card" data-aos="fade-up">
+      <form onsubmit="alert('Project Posted Successfully!'); window.location.href='client-dashboard.html'; return false;">
+        <div class="form-group">
+          <label>Project Title</label>
+          <input type="text" class="form-control" placeholder="e.g. Build a Responsive Portfolio Website" required>
+        </div>
+        <div class="grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="form-group">
+            <label>Category</label>
+            <select class="form-control">
+              <option>Web Development</option>
+              <option>Graphic Design</option>
+              <option>Content Writing</option>
+              <option>App Development</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Budget (₹)</label>
+            <input type="number" class="form-control" placeholder="5000" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Project Description</label>
+          <textarea class="form-control" rows="5" placeholder="Detailed requirements..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Required Skills (Tags)</label>
+          <input type="text" class="form-control" placeholder="React, Figma, SEO (comma separated)">
+        </div>
+        <button type="submit" class="btn-publish">Publish Project Now</button>
+      </form>
+    </div>
+  </main>
+</div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
+</body>
+</html>
