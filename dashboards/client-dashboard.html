@@ -2,85 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Client Dashboard - Skill Linkr</title>
-  <link rel="stylesheet" href="../css/style.css">
-
-  <!-- AOS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Dashboard | Skill Linkr</title>
+  
+  <link rel="stylesheet" href="dashboard.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- Top Navbar -->
-<nav class="navbar">
-  <h2>Skill Linkr</h2>
-  <a href="../index.html" class="nav-btn">Logout</a>
-</nav>
+<div class="app-container">
+  <aside class="sidebar" data-aos="fade-right">
+    <div class="sidebar-header">
+      <div class="logo"><h2><span>Skill</span> Linkr</h2></div>
+    </div>
+    
+    <nav class="sidebar-menu">
+      <a href="#" class="menu-item active"><i class="fas fa-th-large"></i> Dashboard</a>
+      <a href="post-project.html" class="menu-item"><i class="fas fa-plus-circle"></i> Post a Project</a>
+      <a href="my-projects.html" class="menu-item"><i class="fas fa-folder-open"></i> My Projects</a>
+      <a href="freelancers.html" class="menu-item"><i class="fas fa-search"></i> Find Students</a>
+      <a href="messages.html" class="menu-item"><i class="fas fa-comment-dots"></i> Messages <span class="badge">3</span></a>
+      <a href="settings.html" class="menu-item"><i class="fas fa-cog"></i> Settings</a>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </aside>
 
-<div class="dashboard">
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="welcome-text">
+        <h1>Welcome Back, <span class="highlight">Adarsh</span> 👋</h1>
+        <p>Here's what's happening with your projects today.</p>
+      </div>
+      <div class="user-profile">
+        <div class="notif-bell"><i class="fas fa-bell"></i></div>
+        <img src="https://ui-avatars.com/api/?name=Adarsh+Shukla&background=2563eb&color=fff" alt="User">
+      </div>
+    </header>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h3>Client Panel</h3>
-    <a href="#" class="active">Dashboard</a>
-    <a href="../projects/post-project.html">Post Project</a>
-    <a href="../projects/project-feed.html">Browse Freelancers</a>
-  </div>
-
-  <!-- Main Content -->
-  <div class="main">
-
-    <h2 data-aos="fade-down">Welcome Client 👋</h2>
-
-    <!-- Stats Section -->
-    <div class="grid" data-aos="fade-up">
-
-      <div class="card stat-card">
-        <h3>📁 Total Projects</h3>
-        <p class="stat-number">4</p>
+    <section class="stats-grid">
+      <div class="stat-card blue" data-aos="zoom-in" data-aos-delay="100">
+        <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+        <div class="stat-info">
+          <h3>4</h3>
+          <p>Total Projects</p>
+        </div>
       </div>
 
-      <div class="card stat-card">
-        <h3>📨 Applications</h3>
-        <p class="stat-number">12</p>
+      <div class="stat-card green" data-aos="zoom-in" data-aos-delay="200">
+        <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+        <div class="stat-info">
+          <h3>12</h3>
+          <p>Applications</p>
+        </div>
       </div>
 
-      <div class="card stat-card">
-        <h3>⭐ Active Hires</h3>
-        <p class="stat-number">2</p>
+      <div class="stat-card orange" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
+        <div class="stat-info">
+          <h3>2</h3>
+          <p>Active Hires</p>
+        </div>
       </div>
 
-    </div>
+      <div class="stat-card purple" data-aos="zoom-in" data-aos-delay="400">
+        <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+        <div class="stat-info">
+          <h3>₹8.5k</h3>
+          <p>Total Spent</p>
+        </div>
+      </div>
+    </section>
 
-    <!-- Recent Projects -->
-    <h3 class="section-title" data-aos="fade-up">Recent Projects</h3>
+    <section class="recent-section" data-aos="fade-up">
+      <div class="section-header">
+        <h2>Active Projects</h2>
+        <a href="#" class="view-all">View All</a>
+      </div>
 
-    <div class="card" data-aos="fade-up">
-      <h4>Landing Page Design</h4>
-      <p>Budget: ₹5,000 | Deadline: 5 Days</p>
-      <span class="status active-status">Active</span>
-    </div>
+      <div class="project-list">
+        <div class="project-item">
+          <div class="project-info">
+            <div class="project-title">
+              <h4>Modern E-commerce Landing Page</h4>
+              <p>Posted 2 days ago • 8 Applicants</p>
+            </div>
+          </div>
+          <div class="project-meta">
+            <span class="price-tag">₹5,000</span>
+            <span class="status-badge progress">In Progress</span>
+          </div>
+          <button class="btn-manage">Manage</button>
+        </div>
 
-    <div class="card" data-aos="fade-up">
-      <h4>Logo Branding</h4>
-      <p>Budget: ₹1,200 | Completed</p>
-      <span class="status completed-status">Completed</span>
-    </div>
-
-  </div>
+        <div class="project-item">
+          <div class="project-info">
+            <div class="project-title">
+              <h4>Graphic Design - Logo Branding</h4>
+              <p>Posted 1 week ago • 15 Applicants</p>
+            </div>
+          </div>
+          <div class="project-meta">
+            <span class="price-tag">₹1,200</span>
+            <span class="status-badge completed">Completed</span>
+          </div>
+          <button class="btn-manage">Manage</button>
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
 
-<!-- Footer -->
-<footer>
-  © 2026 Skill Linkr | Client Dashboard
-</footer>
-
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init({
-  duration: 800,
-  once: true
-});
-</script>
-
+<script>AOS.init();</script>
 </body>
 </html>
