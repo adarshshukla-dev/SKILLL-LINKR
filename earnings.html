@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earnings | Skill Linkr</title>
+  <link rel="stylesheet" href="dashboard-common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo"><h2><span>Skill</span> Linkr</h2></div>
+    <nav class="sidebar-menu">
+      <a href="student-dashboard.html" class="menu-item"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+       <a href="project-feed.html" class="menu-item"><i class="fas fa-search"></i> <span>Browse Projects</span></a>
+      <a href="my-applications.html" class="menu-item"><i class="fas fa-paper-plane"></i> <span>Applications</span></a>
+      <a href="portfolio.html" class="menu-item"><i class="fas fa-user-circle"></i> <span>My Portfolio</span></a>
+      <a href="earnings.html" class="menu-item active"><i class="fas fa-wallet"></i> <span>Earnings</span></a>
+      <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="welcome-text"><h1 data-aos="fade-down">Financial Overview 💰</h1><p>Manage your income and withdrawal requests.</p></div>
+    </header>
+
+    <section class="stats-grid">
+      <div class="stat-card blue" data-aos="zoom-in" data-aos-delay="100">
+        <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+        <div class="stat-info"><h3>₹12,450</h3><p>Total Revenue</p></div>
+      </div>
+      <div class="stat-card green" data-aos="zoom-in" data-aos-delay="200">
+        <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+        <div class="stat-info"><h3>₹7,500</h3><p>Withdrawn</p></div>
+      </div>
+      <div class="stat-card orange" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+        <div class="stat-info"><h3>₹4,950</h3><p>Pending Clearance</p></div>
+      </div>
+    </section>
+
+    <div class="recent-section" data-aos="fade-up">
+      <div class="section-header"><h2>Payment History</h2><button class="btn-submit" style="padding: 8px 20px; font-size: 0.8rem;">Withdraw Funds</button></div>
+      <div class="item-list">
+        <div class="item-row">
+          <div class="item-details"><h4>Website Frontend Fix</h4><p>March 01, 2026 • ID: #SL-9920</p></div>
+          <div style="text-align: right;"><span style="font-weight: 800; display: block;">+ ₹3,000</span><span class="status-badge status-accepted">Paid</span></div>
+        </div>
+        <div class="item-row">
+          <div class="item-details"><h4>Mobile App Icon</h4><p>Feb 25, 2026 • ID: #SL-9811</p></div>
+          <div style="text-align: right;"><span style="font-weight: 800; display: block;">+ ₹1,950</span><span class="status-badge status-pending">In Escrow</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
+</body>
+</html>
