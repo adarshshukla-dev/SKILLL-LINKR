@@ -6,7 +6,6 @@
   <title>Client Dashboard | Skill Linkr</title>
   
   <link rel="stylesheet" href="dashboard-common.css">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
@@ -19,7 +18,7 @@
     </div>
     
     <nav class="sidebar-menu">
-      <a href="#" class="menu-item active"><i class="fas fa-th-large"></i> Dashboard</a>
+      <a href="client-dashboard.html" class="menu-item active"><i class="fas fa-th-large"></i> Dashboard</a>
       <a href="post-project.html" class="menu-item"><i class="fas fa-plus-circle"></i> Post a Project</a>
       <a href="my-projects.html" class="menu-item"><i class="fas fa-folder-open"></i> My Projects</a>
       <a href="freelancers.html" class="menu-item"><i class="fas fa-search"></i> Find Students</a>
@@ -81,7 +80,7 @@
     <section class="recent-section" data-aos="fade-up">
       <div class="section-header">
         <h2>Active Projects</h2>
-        <a href="#" class="view-all">View All</a>
+        <a href="my-projects.html" class="view-all">View All</a>
       </div>
 
       <div class="project-list">
@@ -118,6 +117,8 @@
 </div>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>AOS.init({ duration: 800, once: true });</script>
+<script src="logic.js"></script>
+
 </body>
 </html>
