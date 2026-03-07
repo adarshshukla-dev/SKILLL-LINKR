@@ -26,7 +26,7 @@
       <a href="post-project.html" class="menu-item active"><i class="fas fa-plus-circle"></i> <span>Post Project</span></a>
        <a href="my-projects.html" class="menu-item"><i class="fas fa-folder-open"></i> My Projects</a>
       <a href="freelancers.html" class="menu-item"><i class="fas fa-search"></i> Find Students</a>
-      <a href="messages.html" class="menu-item"><i class="fas fa-comment-dots"></i> Messages <span class="badge"></span></a>
+      <a href="messages.html" class="menu-item"><i class="fas fa-comment-dots"></i> Messages</a>
       <a href="settings.html" class="menu-item"><i class="fas fa-cog"></i> Settings</a>
     </nav>
     <div class="sidebar-footer"><a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></div>
@@ -41,7 +41,7 @@
     </header>
 
     <div class="form-card" data-aos="fade-up">
-      <form onsubmit="alert('Project Posted Successfully!'); window.location.href='client-dashboard.html'; return false;">
+      <form onsubmit="handlePostProject(event)">
         <div class="form-group">
           <label>Project Title</label>
           <input type="text" class="form-control" placeholder="e.g. Build a Responsive Portfolio Website" required>
@@ -74,7 +74,10 @@
     </div>
   </main>
 </div>
+
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>AOS.init({ duration: 800, once: true });</script>
+<script src="logic.js"></script>
+
 </body>
 </html>
