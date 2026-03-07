@@ -2,86 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Student Dashboard - Skill Linkr</title>
-  <link rel="stylesheet" href="../css/style.css">
-
-  <!-- AOS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | Skill Linkr</title>
+  <link rel="stylesheet" href="dashboard-common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- Top Navbar -->
-<nav class="navbar">
-  <h2>Skill Linkr</h2>
-  <a href="../index.html" class="nav-btn">Logout</a>
-</nav>
+<div class="app-container">
+  <aside class="sidebar" data-aos="fade-right">
+    <div class="sidebar-header">
+      <div class="logo"><h2><span>Skill</span> Linkr</h2></div>
+    </div>
+    
+    <nav class="sidebar-menu">
+      <a href="#" class="menu-item active"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+      <a href="project-feed.html" class="menu-item"><i class="fas fa-search"></i> <span>Browse Projects</span></a>
+      <a href="my-applications.html" class="menu-item"><i class="fas fa-paper-plane"></i> <span>Applications</span></a>
+      <a href="portfolio.html" class="menu-item"><i class="fas fa-user-circle"></i> <span>My Portfolio</span></a>
+      <a href="earnings.html" class="menu-item"><i class="fas fa-wallet"></i> <span>Earnings</span></a>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <a href="../index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+    </div>
+  </aside>
 
-<div class="dashboard">
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="welcome-text">
+        <h1 data-aos="fade-down">Student Panel 👋</h1>
+        <p>Your freelancing journey at a glance.</p>
+      </div>
+      <div class="user-profile">
+        <img src="https://ui-avatars.com/api/?name=Student&background=2563eb&color=fff" alt="User">
+      </div>
+    </header>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h3>Student Panel</h3>
-    <a href="#" class="active">Dashboard</a>
-    <a href="../projects/project-feed.html">Browse Projects</a>
-    <a href="../user/portfolio.html">My Portfolio</a>
-  </div>
-
-  <!-- Main Content -->
-  <div class="main">
-
-    <h2 data-aos="fade-down">Welcome Student 👋</h2>
-
-    <!-- Stats Section -->
-    <div class="grid" data-aos="fade-up">
-
-      <div class="card stat-card">
-        <h3>📨 Applications</h3>
-        <p class="stat-number">3</p>
+    <section class="stats-grid">
+      <div class="stat-card blue" data-aos="zoom-in" data-aos-delay="100">
+        <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+        <div class="stat-info">
+          <h3>3</h3>
+          <p>Applications</p>
+        </div>
       </div>
 
-      <div class="card stat-card">
-        <h3>🚀 Active Projects</h3>
-        <p class="stat-number">1</p>
+      <div class="stat-card orange" data-aos="zoom-in" data-aos-delay="200">
+        <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+        <div class="stat-info">
+          <h3>1</h3>
+          <p>Active Projects</p>
+        </div>
       </div>
 
-      <div class="card stat-card">
-        <h3>💰 Total Earnings</h3>
-        <p class="stat-number">₹7,500</p>
+      <div class="stat-card green" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stat-icon"><i class="fas fa-coins"></i></div>
+        <div class="stat-info">
+          <h3>₹7,500</h3>
+          <p>Total Earnings</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="recent-section" data-aos="fade-up">
+      <div class="section-header">
+        <h2>Recent Applications</h2>
+        <a href="#" style="color: var(--primary); font-weight: 700; text-decoration: none;">View Feed</a>
       </div>
 
-    </div>
+      <div class="item-list">
+        <div class="item-row">
+          <div class="item-details">
+            <h4>Landing Page Design</h4>
+            <p>Bid: ₹4,000 | Submitted 1 day ago</p>
+          </div>
+          <span class="status-badge status-pending">Pending</span>
+        </div>
 
-    <!-- Recent Applications -->
-    <h3 class="section-title" data-aos="fade-up">Recent Applications</h3>
-
-    <div class="card" data-aos="fade-up">
-      <h4>Landing Page Design</h4>
-      <p>Bid: ₹4,000 | Status: Pending</p>
-      <span class="status pending-status">Pending</span>
-    </div>
-
-    <div class="card" data-aos="fade-up">
-      <h4>Logo Design</h4>
-      <p>Bid: ₹1,000 | Status: Accepted</p>
-      <span class="status active-status">Accepted</span>
-    </div>
-
-  </div>
-
+        <div class="item-row">
+          <div class="item-details">
+            <h4>Logo Branding for Startup</h4>
+            <p>Bid: ₹1,000 | Milestone 1 Clear</p>
+          </div>
+          <span class="status-badge status-accepted">Accepted</span>
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
 
-<!-- Footer -->
-<footer>
-  © 2026 Skill Linkr | Student Dashboard
-</footer>
-
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init({
-  duration: 800,
-  once: true
-});
-</script>
-
+<script>AOS.init();</script>
 </body>
 </html>
