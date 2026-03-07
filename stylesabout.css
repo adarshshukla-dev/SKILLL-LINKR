@@ -1,0 +1,155 @@
+/* SKILL LINKR - ABOUT PAGE SPECIFIC UI v2.0 */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --grad-main: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --grey: #64748b;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--dark);
+    background-color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+/* --- Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.logo h2 { font-weight: 800; font-size: 1.8rem; }
+.logo h2 span { color: var(--primary); }
+
+#nav-menu { display: flex; list-style: none; gap: 2rem; align-items: center; }
+#nav-menu a { text-decoration: none; color: var(--dark); font-weight: 600; transition: 0.3s; }
+#nav-menu a:hover, #nav-menu a.active { color: var(--primary); }
+
+.nav-btn {
+    background: var(--grad-main);
+    color: white !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+}
+
+/* --- Hero Section --- */
+.hero {
+    padding: 120px 0 80px;
+    text-align: center;
+    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent);
+}
+
+.hero h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem; }
+.hero .highlight { background: var(--grad-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { color: var(--grey); font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
+
+/* --- Stats Section --- */
+.stats { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 1.5rem; 
+    margin-top: -40px; 
+    position: relative;
+    z-index: 10;
+}
+
+.stat-card { 
+    background: white; 
+    padding: 2.5rem 1.5rem; 
+    border-radius: 24px; 
+    box-shadow: var(--shadow); 
+    text-align: center; 
+    border: 1px solid #f1f5f9;
+}
+
+.stat-card h2 { font-size: 2.8rem; color: var(--primary); font-weight: 800; margin-bottom: 5px; }
+.stat-card p { font-weight: 600; color: var(--grey); }
+
+/* --- About Journey & Mission --- */
+.section { padding: 100px 0; }
+.section-title { text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 3.5rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+
+.card { 
+    background: white; 
+    padding: 3.5rem 2rem; 
+    border-radius: 28px; 
+    text-align: center; 
+    box-shadow: var(--shadow); 
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #f1f5f9;
+}
+
+.card:hover { transform: translateY(-12px); border-color: var(--primary); }
+.card i { background: var(--grad-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; }
+
+/* --- Founder & Content Blocks --- */
+.alt-bg { background-color: #f8fafc; }
+.founder-info h2 .highlight { background: var(--grad-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* --- CTA Section --- */
+.about-cta {
+    padding: 100px 0;
+    text-align: center;
+    background: var(--grad-main);
+    color: white;
+    margin: 40px 0;
+}
+
+.about-cta h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
+.about-cta p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9; }
+
+.cta-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary { background: white; color: var(--primary); }
+.btn-secondary { background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255,255,255,0.3); }
+
+.btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+/* --- Footer --- */
+footer { background: var(--dark); color: white; padding: 80px 0 30px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 50px; }
+.footer-col h3, .footer-col h4 { margin-bottom: 1.5rem; font-weight: 700; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 1rem; }
+.footer-col a { color: #94a3b8; text-decoration: none; transition: 0.3s; }
+.footer-col a:hover { color: white; padding-left: 5px; }
+.social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
+.social-icons a { font-size: 1.5rem; color: #94a3b8; }
+.footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; color: #64748b; font-size: 0.9rem; }
+
+/* --- Mobile Menu Toggle --- */
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    #nav-menu {
+        display: none;
+        position: absolute;
+        top: 80px; left: 0
