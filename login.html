@@ -4,11 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Skill Linkr - Welcome Back</title>
-  
   <link rel="stylesheet" href="auth.css">
-  
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -27,6 +24,18 @@
     </div>
 
     <form onsubmit="handleLogin(event)">
+      <div class="input-group">
+        <label>I am a...</label>
+        <div class="input-field">
+          <i class="fas fa-user-tag"></i>
+          <select id="userRole" required style="width: 100%; border: none; background: transparent; outline: none; padding: 14px 0; font-family: inherit; cursor: pointer;">
+            <option value="" disabled selected>Select Role</option>
+            <option value="student">Student / Freelancer</option>
+            <option value="client">Client / Recruiter</option>
+          </select>
+        </div>
+      </div>
+
       <div class="input-group">
         <label>Email Address</label>
         <div class="input-field">
