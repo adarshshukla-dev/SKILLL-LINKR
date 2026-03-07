@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects | Client Panel</title>
+  
+  <link rel="stylesheet" href="dashboard-common.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    .project-stats-row {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    .mini-stat {
+        font-size: 0.8rem;
+        color: var(--grey);
+        background: var(--bg-body);
+        padding: 4px 10px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+    }
+    .action-btns {
+        display: flex;
+        gap: 10px;
+    }
+    .btn-icon {
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: var(--white);
+        color: var(--grey);
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .btn-icon:hover {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
+    .btn-view-apps {
+        background: var(--primary-light);
+        color: var(--primary);
+        border: none;
+        padding: 8px 16px;
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .btn-view-apps:hover {
+        background: var(--primary);
+        color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+  <aside class="sidebar" data-aos="fade-right">
+    <div class="sidebar-header">
+      <div class="logo"><h2><span>Skill</span> Linkr</h2></div>
+    </div>
+    
+    <nav class="sidebar-menu">
+      <a href="client-dashboard.html" class="menu-item"><i class="fas fa-th-large"></i> <span>Dashboard</span></a>
+      <a href="post-project.html" class="menu-item"><i class="fas fa-plus-circle"></i> <span>Post Project</span></a>
+      <a href="my-projects.html" class="menu-item active"><i class="fas fa-folder-open"></i> <span>My Projects</span></a>
+       <a href="freelancers.html" class="menu-item"><i class="fas fa-search"></i> Find Students</a>
+      <a href="messages.html" class="menu-item"><i class="fas fa-comment-dots"></i> Messages <span class="badge">3</span></a>
+      <a href="settings.html" class="menu-item"><i class="fas fa-cog"></i> Settings</a>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="welcome-text">
+        <h1 data-aos="fade-down">My Projects 📁</h1>
+        <p>Manage your active listings and review proposals.</p>
+      </div>
+      <a href="post-project.html" class="btn-submit" style="text-decoration: none; padding: 12px 20px;">+ Post New</a>
+    </header>
+
+    <div class="recent-section" data-aos="fade-up">
+      <div class="section-header">
+        <h2>Active & Past Listings</h2>
+        <div class="filter-tabs" style="display: flex; gap: 10px;">
+            <span class="status-badge status-accepted" style="cursor:pointer">All (4)</span>
+            <span class="status-badge status-pending" style="cursor:pointer; background: #f1f5f9; color: var(--grey);">Drafts</span>
+        </div>
+      </div>
+
+      <div class="item-list">
+        
+        <div class="item-row">
+          <div class="item-details">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <h4>Modern E-commerce Landing Page</h4>
+                <span class="status-badge status-accepted">Active</span>
+            </div>
+            <div class="project-stats-row">
+                <span class="mini-stat"><i class="fas fa-users"></i> 8 Applicants</span>
+                <span class="mini-stat"><i class="fas fa-wallet"></i> ₹5,000</span>
+                <span class="mini-stat"><i class="fas fa-calendar"></i> Posted 2 days ago</span>
+            </div>
+          </div>
+          <div class="action-btns">
+            <button class="btn-view-apps">View Proposals</button>
+            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+            <button class="btn-icon" style="color: #ef4444;"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-details">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <h4>Logo Branding - Coffee Shop</h4>
+                <span class="status-badge" style="background: #f1f5f9; color: var(--grey);">Completed</span>
+            </div>
+            <div class="project-stats-row">
+                <span class="mini-stat"><i class="fas fa-check-circle"></i> Hired: Adarsh S.</span>
+                <span class="mini-stat"><i class="fas fa-wallet"></i> ₹1,200</span>
+            </div>
+          </div>
+          <div class="action-btns">
+            <button class="btn-view-apps" style="background: #f1f5f9; color: var(--dark);">View Details</button>
+            <button class="btn-icon"><i class="fas fa-star" style="color: #f59e0b;"></i></button>
+          </div>
+        </div>
+
+        <div class="item-row">
+            <div class="item-details">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                  <h4>Python Web Scraper Script</h4>
+                  <span class="status-badge status-pending">Pending Review</span>
+              </div>
+              <div class="project-stats-row">
+                  <span class="mini-stat"><i class="fas fa-users"></i> 3 Applicants</span>
+                  <span class="mini-stat"><i class="fas fa-wallet"></i> ₹3,500</span>
+              </div>
+            </div>
+            <div class="action-btns">
+              <button class="btn-view-apps">Review Proposals</button>
+              <button class="btn-icon"><i class="fas fa-edit"></i></button>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
+</body>
+</html>
