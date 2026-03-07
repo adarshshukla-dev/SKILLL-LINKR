@@ -4,132 +4,175 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skill Linkr | India’s Student Freelancing Platform</title>
+  <meta name="description" content="Skill Linkr connects student freelancers directly with clients — fast, affordable and reliable.">
   
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css"> <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <nav class="navbar" data-aos="fade-down">
-    <h2>Skill Linkr</h2>
-    <div>
-      <a href="#how">How It Works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="login.html">Log In</a>
-      <a href="register.html" class="nav-btn">Start Earning</a>
-    </div>
-  </nav>
+  <header>
+    <nav class="navbar container" data-aos="fade-down">
+      <div class="logo">
+        <h2><span>Skill</span> Linkr</h2>
+      </div>
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+      <ul id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="login.html">Log In</a></li>
+        <li><a href="register.html" class="btn-primary nav-btn">Join Now</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <section id="home" class="hero">
-    <h1 data-aos="fade-up">Skill <span style="background: var(--gradient-secondary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Linkr</span></h1>
-    <p data-aos="fade-up" data-aos-delay="200">
-      India's first dedicated platform for student freelancers. 
-      Turn your college skills into real income today.
-    </p>
-    <div data-aos="zoom-in" data-aos-delay="400">
-      <a href="register.html" class="btn"><span>Join the Revolution</span> <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </section>
-
-  <div class="container">
-    <section class="stats">
-      <div class="stat" data-aos="zoom-in">
-        <h2>500+</h2>
-        <p>Active Students</p>
-      </div>
-      <div class="stat" data-aos="zoom-in" data-aos-delay="150">
-        <h2>120+</h2>
-        <p>Projects Posted</p>
-      </div>
-      <div class="stat" data-aos="zoom-in" data-aos-delay="300">
-        <h2>₹2L+</h2>
-        <p>Student Earnings</p>
-      </div>
-    </section>
-  </div>
-
-  <section id="how" class="container">
-    <h2 class="section-title" data-aos="fade-right">The Workflow</h2>
-    <div class="grid">
-      <div class="card" data-aos="fade-up">
-        <i class="fas fa-rocket fa-3x" style="color: var(--primary); margin-bottom: 1.5rem;"></i>
-        <h3>Post Projects</h3>
-        <p>Businesses post requirements with budget and timeline. It's fast and verified.</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fas fa-laptop-code fa-3x" style="color: var(--primary); margin-bottom: 1.5rem;"></i>
-        <h3>Apply & Pitch</h3>
-        <p>Students showcase portfolios and bid on projects that match their expertise.</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="400">
-        <i class="fas fa-wallet fa-3x" style="color: var(--primary); margin-bottom: 1.5rem;"></i>
-        <h3>Secure Pay</h3>
-        <p>Payment is held in escrow and released only when the client is 100% satisfied.</p>
+    <div class="container">
+      <h1 data-aos="fade-up">India's First Dedicated Platform for <span class="highlight">Student Freelancers</span></h1>
+      <p data-aos="fade-up" data-aos-delay="200">Turn your college skills into real income. Connect with startups, businesses & real-world projects — fast, affordable & reliable.</p>
+      <div class="hero-buttons" data-aos="zoom-in" data-aos-delay="400">
+        <a href="register.html" class="btn-primary">Start Earning</a>
+        <a href="#how" class="btn-secondary">How It Works</a>
       </div>
     </div>
   </section>
 
-  <section id="pricing" class="container">
-    <h2 class="section-title" data-aos="fade-right">Plans for Everyone</h2>
-    <div class="grid">
-      <div class="card" data-aos="flip-left">
-        <span class="status pending-status">Free</span>
-        <h3 style="margin: 1.5rem 0;">Student Basic</h3>
-        <p>Apply to 5 projects/month</p>
-        <p>Standard Profile</p>
-        <a href="#" class="btn small-btn" style="margin-top: 2rem;"><span>Get Started</span></a>
-      </div>
-      
-      <div class="card" data-aos="flip-left" data-aos-delay="200" style="border: 2px solid var(--primary);">
-        <span class="status active-status">Most Popular</span>
-        <h3 style="margin: 1.5rem 0;">Student Pro</h3>
-        <p><strong>₹49/month</strong></p>
-        <p>Unlimited Bidding</p>
-        <p>Featured Profile Badge</p>
-        <a href="#" class="btn small-btn" style="margin-top: 2rem;"><span>Go Pro</span></a>
-      </div>
-
-      <div class="card" data-aos="flip-left" data-aos-delay="400">
-        <span class="status completed-status">Business</span>
-        <h3 style="margin: 1.5rem 0;">Client Pro</h3>
-        <p>Pay Per Project</p>
-        <p>Priority Matching</p>
-        <a href="#" class="btn small-btn" style="margin-top: 2rem;"><span>Hire Now</span></a>
-      </div>
+  <section class="stats container">
+    <div class="stat-card" data-aos="zoom-in">
+      <h2>500+</h2>
+      <p>Active Students</p>
+    </div>
+    <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+      <h2>120+</h2>
+      <p>Projects Posted</p>
+    </div>
+    <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+      <h2>₹2L+</h2>
+      <p>Student Earnings</p>
+    </div>
+    <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+      <h2>50+</h2>
+      <p>Partner Startups</p>
     </div>
   </section>
 
-  <section id="contact" class="container">
-    <h2 class="section-title" data-aos="fade-up">Contact the Squad</h2>
-    <div class="card" style="max-width: 800px; margin: 0 auto;" data-aos="zoom-in">
-      <form>
-        <div class="input-group">
-          <i class="fas fa-user"></i>
-          <input type="text" placeholder="Full Name" required>
+  <section id="how" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">How It Works</h2>
+      <div class="grid">
+        <div class="card" data-aos="fade-right">
+          <i class="fas fa-file-invoice-dollar fa-3x"></i>
+          <h3>1. Post Project</h3>
+          <p>Clients post detailed project briefs. Students see your requirements instantly.</p>
         </div>
-        <div class="input-group">
-          <i class="fas fa-envelope"></i>
-          <input type="email" placeholder="Email Address" required>
+        <div class="card" data-aos="fade-up">
+          <i class="fas fa-user-graduate fa-3x"></i>
+          <h3>2. Students Apply</h3>
+          <p>Verified students submit proposals with portfolios and tailored timelines.</p>
         </div>
-        <div class="input-group">
-          <i class="fas fa-comment-dots"></i>
-          <textarea placeholder="Tell us about your project..." rows="4" style="padding-left: 4rem;"></textarea>
+        <div class="card" data-aos="fade-left">
+          <i class="fas fa-shield-check fa-3x"></i>
+          <h3>3. Hire & Pay Securely</h3>
+          <p>Review, hire, and release payment only after project satisfaction.</p>
         </div>
-        <button type="submit" class="btn full-btn"><span>Send Message</span></button>
-      </form>
+      </div>
     </div>
   </section>
 
-  <section class="cta">
-    <h2 data-aos="fade-up">Ready to build your professional identity?</h2>
-    <p data-aos="fade-up" data-aos-delay="200">Join thousands of Indian students earning while they learn.</p>
-    <br>
-    <a href="register.html" class="btn" style="background: white; color: var(--primary);"><span>Join Skill Linkr Now</span></a>
+  <section id="pricing" class="section alt-bg">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Simple Pricing</h2>
+      <div class="grid">
+        <div class="card" data-aos="flip-left">
+          <h4>Student Basic</h4>
+          <h3 class="price">Free</h3>
+          <p>Apply to 5 projects/month</p>
+          <p>Basic Profile</p>
+          <a href="#" class="btn-outline">Get Started</a>
+        </div>
+        <div class="card popular" data-aos="flip-left" data-aos-delay="200">
+          <div class="badge">Most Popular</div>
+          <h4>Student Pro</h4>
+          <h3 class="price">₹49<span>/mo</span></h3>
+          <p>Unlimited applications</p>
+          <p>Featured Profile & Support</p>
+          <a href="#" class="btn-primary">Choose Pro</a>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="400">
+          <h4>Client Pro</h4>
+          <h3 class="price">Pay Per Project</h3>
+          <p>Unlimited postings</p>
+          <p>Advanced matching</p>
+          <a href="#" class="btn-outline">Post Now</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer style="padding: 5rem 2.5rem; background: var(--dark); color: white;">
-    <div class="footer-container">
-      <div>
-        <h2 style="color: white; margin-bottom: 1.5rem;">Skill Linkr</h2>
-        <p>Connecting student talent with real-world industry experience since 2024.</p>
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+      <div class="grid contact-wrapper">
+        <div class="contact-info" data-aos="fade-right">
+          <h3>Contact Details</h3>
+          <p><i class="fas fa-envelope"></i> info@skilllinkr.in</p>
+          <p><i class="fas fa-map-marker-alt"></i> Uttar Pradesh, India</p>
+          <p><i class="fas fa-phone"></i> +91 XXXXX XXXXX</p>
+        </div>
+        <form class="contact-form" data-aos="fade-left">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
       </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Skill Linkr</h3>
+        <p>Empowering India’s student freelancers with real-world opportunities.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#how">How it Works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/radheyvallabh8/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Skill Linkr | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('#nav-menu');
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
