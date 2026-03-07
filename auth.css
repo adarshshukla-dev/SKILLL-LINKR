@@ -1,0 +1,95 @@
+/* SKILL LINKR - BLUE PROFESSIONAL AUTH THEME */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #2563eb; /* Royal Blue */
+    --secondary: #0ea5e9; /* Sky Blue */
+    --grad: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+    --dark: #0f172a;
+    --grey: #64748b;
+    --bg: #f0f4f8; /* Light Blueish Grey */
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    margin: 0;
+    color: var(--dark);
+}
+
+.auth-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 5%;
+}
+
+.logo h2 { font-weight: 800; font-size: 1.6rem; color: var(--dark); }
+.logo h2 span { color: var(--primary); }
+.back-link { text-decoration: none; color: var(--grey); font-weight: 600; transition: 0.3s; }
+.back-link:hover { color: var(--primary); }
+
+.auth-wrapper {
+    display: flex; justify-content: center; align-items: center;
+    padding: 20px;
+    min-height: 85vh;
+}
+
+.auth-card {
+    background: white;
+    width: 100%;
+    max-width: 480px;
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.05);
+}
+
+.auth-header { text-align: center; margin-bottom: 2rem; }
+.icon-circle {
+    width: 64px; height: 64px;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 18px; margin: 0 auto 1rem; font-size: 1.8rem;
+}
+
+.input-group { margin-bottom: 1.2rem; }
+.input-group label { display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 6px; color: #334155; }
+
+.input-field {
+    display: flex; align-items: center;
+    background: #f8fafc;
+    padding: 0 1rem;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+.input-field:focus-within { border-color: var(--primary); background: white; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
+.input-field i { color: #94a3b8; margin-right: 12px; width: 20px; text-align: center; }
+
+.input-field input, .input-field select {
+    width: 100%; border: none; background: transparent;
+    padding: 14px 0; font-size: 1rem; outline: none; font-family: inherit; color: var(--dark);
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--grad);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: 0.3s;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.4); }
+
+.switch-auth { text-align: center; margin-top: 1.5rem; color: var(--grey); font-size: 0.9rem; }
+.switch-auth a { color: var(--primary); text-decoration: none; font-weight: 700; }
+
+.footer-mini { text-align: center; padding: 2rem; color: var(--grey); font-size: 0.85rem; }
