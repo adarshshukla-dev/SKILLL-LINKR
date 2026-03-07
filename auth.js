@@ -74,3 +74,57 @@ if (typeof AOS !== 'undefined') {
         once: true
     });
 }
+
+
+// 1. Password Visibility Toggle
+function togglePassword(id) {
+    const passwordInput = document.getElementById(id);
+    const icon = event.target;
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        icon.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+        passwordInput.type = "password";
+        icon.classList.replace("fa-eye-slash", "fa-eye");
+    }
+}
+
+// 2. SMART LOGIN & REDIRECT
+function handleLogin(event) {
+    event.preventDefault();
+    
+    const role = document.getElementById('userRole').value;
+    const email = document.getElementById('loginEmail').value;
+    const pass = document.getElementById('loginPass').value;
+
+    if (!role) {
+        alert("Please select your role (Student or Client) first!");
+        return;
+    }
+
+    // Logic: Agar fields bhari hain toh redirect karo
+    if (email && pass) {
+        alert("Login Successful! Redirecting to " + role + " dashboard...");
+        
+        if (role === "student") {
+            window.location.href = "student-dashboard.html";
+        } else if (role === "client") {
+            window.location.href = "client-dashboard.html";
+        }
+    } else {
+        alert("Please fill in all details.");
+    }
+}
+
+// 3. Register Redirects (Optional but helpful)
+function handleStudentSignup(e) {
+    e.preventDefault();
+    alert("Student Account Created! Redirecting to Login...");
+    window.location.href = "login.html";
+}
+
+function handleClientSignup(e) {
+    e.preventDefault();
+    alert("Client Account Created! Redirecting to Login...");
+    window.location.href = "login.html";
+}
