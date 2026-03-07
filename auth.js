@@ -1,9 +1,13 @@
-// SKILL LINKR - AUTH LOGIC 2026
+/**
+ * SKILL LINKR - COMMON AUTH LOGIC v3.0
+ * Handles: Student Signup, Client Signup, Login & Password Toggle
+ */
 
-// 1. Password Toggle Function
-function togglePassword(fieldId) {
-    const passwordInput = document.getElementById(fieldId);
-    const icon = event.target;
+// 1. PASSWORD VISIBILITY TOGGLE
+// Isme hum 'id' pass karte hain taaki ye har page ke liye kaam kare
+function togglePassword(id) {
+    const passwordInput = document.getElementById(id);
+    const icon = event.target; // Jo icon click hua hai
     
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
@@ -14,51 +18,59 @@ function togglePassword(fieldId) {
     }
 }
 
-// 2. Handle Student Registration
+// 2. STUDENT SIGNUP LOGIC
 function handleStudentSignup(event) {
     event.preventDefault();
     
-    // Basic Validation
-    const name = document.querySelector('input[placeholder*="Adarsh"]').value;
-    const email = document.querySelector('input[type="email"]').value;
+    // Form se data nikalna
+    const name = document.getElementById('studentName').value;
+    const email = document.getElementById('studentEmail').value;
     
-    if(name && email) {
-        alert("Registration Successful, " + name + "!\nRedirecting to Login...");
-        // Redirect to Login Page
+    if (name && email) {
+        alert("Registration Successful!\nWelcome to Skill Linkr, " + name + ".\nRedirecting to Login page...");
+        // Redirect to Login
         window.location.href = "login.html";
-    } else {
-        alert("Please fill all required fields!");
     }
 }
 
-// 3. Handle Client Registration
+// 3. CLIENT SIGNUP LOGIC
 function handleClientSignup(event) {
     event.preventDefault();
     
-    const clientName = document.querySelector('input[placeholder*="Who is hiring"]').value;
+    const clientName = document.getElementById('clientName').value;
+    const company = document.getElementById('companyName').value || "your startup";
     
-    if(clientName) {
-        alert("Welcome to Skill Linkr, " + clientName + "!\nRedirecting to Login...");
+    if (clientName) {
+        alert("Welcome " + clientName + "!\nWe are ready to find talent for " + company + ".\nRedirecting to Login...");
+        // Redirect to Login
         window.location.href = "login.html";
-    } else {
-        alert("Please enter your name!");
     }
 }
 
-// 4. Handle Login Logic
+// 4. LOGIN LOGIC
 function handleLogin(event) {
     event.preventDefault();
     
-    const email = document.querySelector('input[type="email"]').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById('loginEmail').value;
+    const pass = document.getElementById('loginPass').value;
 
-    // Dummy Logic: Agar email aur password bhara hai toh dashboard bhejo
-    if (email !== "" && password !== "") {
-        alert("Login Successful! Welcome to your Dashboard.");
+    // Basic check (aap yahan API call ya Firebase connect kar sakte hain)
+    if (email && pass) {
+        alert("Login Successful!\nTaking you to your Dashboard...");
         
-        // Yahan aap tay kar sakte hain ki kahan bhejna hai
-        // Example: window.location.href = "dashboard.html";
+        /* FUTURE REDIRECTION:
+           Agar aapne dashboard.html bana liya hai, toh niche wali line uncomment kar dena:
+           window.location.href = "dashboard.html"; 
+        */
     } else {
-        alert("Invalid Email or Password!");
+        alert("Please enter valid credentials!");
     }
+}
+
+// AOS Initializer (Agar CDN link hai toh ye automatic chalega)
+if (typeof AOS !== 'undefined') {
+    AOS.init({
+        duration: 800,
+        once: true
+    });
 }
