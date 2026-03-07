@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio | Skill Linkr</title>
+  <link rel="stylesheet" href="dashboard-common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    .portfolio-grid { display: grid; grid-template-columns: 300px 1fr; gap: 2rem; }
+    .profile-sidebar { background: var(--white); padding: 2rem; border-radius: 24px; border: 1px solid var(--border); text-align: center; }
+    .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--primary-light); margin-bottom: 1rem; }
+    .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    .work-card { background: var(--white); border-radius: 15px; overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
+    .work-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+    .work-thumb { width: 100%; height: 150px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: var(--grey); }
+    .work-info { padding: 1rem; }
+    @media (max-width: 900px) { .portfolio-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo"><h2><span>Skill</span> Linkr</h2></div>
+    <nav class="sidebar-menu">
+      <a href="student-dashboard.html" class="menu-item"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+      <a href="project-feed.html" class="menu-item"><i class="fas fa-search"></i> <span>Browse Projects</span></a>
+      <a href="my-applications.html" class="menu-item"><i class="fas fa-paper-plane"></i> <span>Applications</span></a>
+      <a href="portfolio.html" class="menu-item active"><i class="fas fa-user-circle"></i> <span>My Portfolio</span></a>
+      <a href="earnings.html" class="menu-item"><i class="fas fa-wallet"></i> <span>Earnings</span></a>
+    </nav>
+    <div class="sidebar-footer"><a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></div>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="welcome-text"><h1 data-aos="fade-down">Student Portfolio 🎨</h1><p>Showcase your best work to potential clients.</p></div>
+    </header>
+
+    <div class="portfolio-grid">
+      <div class="profile-sidebar" data-aos="fade-right">
+        <img src="https://ui-avatars.com/api/?name=Adarsh+Shukla&background=2563eb&color=fff" class="profile-img">
+        <h3>Adarsh Shukla</h3>
+        <p style="color: var(--grey); margin-bottom: 1.5rem;">Web Developer & Designer</p>
+        <div style="text-align: left;">
+          <h4 style="margin-bottom: 10px;">Skills</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+            <span class="status-badge status-accepted">React</span>
+            <span class="status-badge status-accepted">UI Design</span>
+            <span class="status-badge status-accepted">Node.js</span>
+          </div>
+        </div>
+        <button class="btn-submit" style="margin-top: 2rem; width: 100%; padding: 10px; font-size: 0.9rem;">Edit Profile</button>
+      </div>
+
+      <div class="portfolio-main" data-aos="fade-left">
+        <div class="recent-section">
+          <div class="section-header"><h2>Project Gallery</h2><button class="menu-item" style="border: none; background: var(--primary-light); color: var(--primary);">+ Add Work</button></div>
+          <div class="work-grid">
+            <div class="work-card">
+              <div class="work-thumb"><i class="fas fa-code fa-3x"></i></div>
+              <div class="work-info"><h4>E-commerce App</h4><p style="font-size: 0.8rem; color: var(--grey);">Full-stack React Application</p></div>
+            </div>
+            <div class="work-card">
+              <div class="work-thumb"><i class="fas fa-paint-brush fa-3x"></i></div>
+              <div class="work-info"><h4>Branding Kit</h4><p style="font-size: 0.8rem; color: var(--grey);">Logo & Stationery Design</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
+</body>
+</html>
