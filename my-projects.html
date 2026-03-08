@@ -6,7 +6,6 @@
   <title>My Projects | Client Panel</title>
   
   <link rel="stylesheet" href="dashboard-common.css">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
@@ -80,7 +79,9 @@
     </nav>
     
     <div class="sidebar-footer">
-      <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+      <a href="javascript:localStorage.clear(); window.location.href='index.html';" class="logout-btn">
+        <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+      </a>
     </div>
   </aside>
 
@@ -97,12 +98,12 @@
       <div class="section-header">
         <h2>Active & Past Listings</h2>
         <div class="filter-tabs" style="display: flex; gap: 10px;">
-            <span class="status-badge status-accepted" style="cursor:pointer">All (4)</span>
+            <span class="status-badge status-accepted" style="cursor:pointer">All</span>
             <span class="status-badge status-pending" style="cursor:pointer; background: #f1f5f9; color: var(--grey);">Drafts</span>
         </div>
       </div>
 
-      <div class="item-list">
+      <div class="item-list" id="my-projects-list">
         
         <div class="item-row">
           <div class="item-details">
@@ -140,29 +141,13 @@
           </div>
         </div>
 
-        <div class="item-row">
-            <div class="item-details">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                  <h4>Python Web Scraper Script</h4>
-                  <span class="status-badge status-pending">Pending Review</span>
-              </div>
-              <div class="project-stats-row">
-                  <span class="mini-stat"><i class="fas fa-users"></i> 3 Applicants</span>
-                  <span class="mini-stat"><i class="fas fa-wallet"></i> ₹3,500</span>
-              </div>
-            </div>
-            <div class="action-btns">
-              <button class="btn-view-apps">Review Proposals</button>
-              <button class="btn-icon"><i class="fas fa-edit"></i></button>
-            </div>
-          </div>
-
       </div>
     </div>
   </main>
 </div>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>AOS.init({ duration: 800, once: true });</script>
+<script src="logic.js"></script>
 </body>
 </html>
