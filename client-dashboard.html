@@ -27,7 +27,9 @@
     </nav>
     
     <div class="sidebar-footer">
-      <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <a href="javascript:localStorage.clear(); window.location.href='index.html';" class="logout-btn">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </a>
     </div>
   </aside>
 
@@ -47,7 +49,7 @@
       <div class="stat-card blue" data-aos="zoom-in" data-aos-delay="100">
         <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
         <div class="stat-info">
-          <h3>4</h3>
+          <h3 id="client-project-count">4</h3>
           <p>Total Projects</p>
         </div>
       </div>
@@ -83,7 +85,7 @@
         <a href="my-projects.html" class="view-all">View All</a>
       </div>
 
-      <div class="project-list">
+      <div class="project-list" id="client-active-projects">
         <div class="project-item">
           <div class="project-info">
             <div class="project-title">
