@@ -93,7 +93,7 @@
       <a href="student-dashboard.html" class="menu-item"><i class="fas fa-home"></i> <span>Dashboard</span></a>
       <a href="project-feed.html" class="menu-item active"><i class="fas fa-search"></i> <span>Browse Projects</span></a>
       <a href="my-applications.html" class="menu-item"><i class="fas fa-paper-plane"></i> <span>Applications</span></a>
-     <a href="portfolio.html" class="menu-item"><i class="fas fa-user-circle"></i> <span>My Portfolio</span></a>
+      <a href="portfolio.html" class="menu-item"><i class="fas fa-user-circle"></i> <span>My Portfolio</span></a>
       <a href="earnings.html" class="menu-item"><i class="fas fa-wallet"></i> <span>Earnings</span></a>
     </nav>
     <div class="sidebar-footer">
@@ -120,7 +120,7 @@
       <button class="btn-apply" style="padding: 10px 30px;">Search</button>
     </div>
 
-    <div class="feed-grid">
+    <div class="feed-grid" id="project-feed-container">
       
       <div class="project-card" data-aos="fade-up">
         <div class="project-details">
@@ -139,7 +139,7 @@
         <div style="text-align: right;">
           <h3 style="margin: 0 0 10px 0; color: var(--dark);">₹8,000</h3>
           <p style="color: var(--grey); font-size: 0.85rem; margin-bottom: 20px;">5 days left</p>
-          <a href="#" class="btn-apply" onclick="applyNow('E-commerce Website Frontend')">Apply Now</a>
+          <button class="btn-apply" onclick="applyToProject('E-commerce Website Frontend', 101)">Apply Now</button>
         </div>
       </div>
 
@@ -160,7 +160,7 @@
         <div style="text-align: right;">
           <h3 style="margin: 0 0 10px 0; color: var(--dark);">₹2,500</h3>
           <p style="color: var(--grey); font-size: 0.85rem; margin-bottom: 20px;">2 days left</p>
-          <a href="#" class="btn-apply" onclick="applyNow('Minimalist Logo Design')">Apply Now</a>
+          <button class="btn-apply" onclick="applyToProject('Minimalist Logo Design', 102)">Apply Now</button>
         </div>
       </div>
 
