@@ -1,24 +1,13 @@
-// --- 1. SESSION & ROLE MANAGEMENT ---
-// Ye part decide karega ki login ke baad user kaha jayega
-function checkUserRole() {
-    const role = localStorage.getItem('userRole'); // 'client' or 'student'
-    if (!role) {
-        // Agar koi logged in nahi hai toh login page par bhejo
-        if (!window.location.pathname.includes('login.html') && !window.location.pathname.includes('index.html')) {
-            window.location.href = 'login.html';
-        }
-    }
-}
-
-// --- 2. PROJECT POSTING (For post-project.html) ---
+// --- 1. PROJECT POSTING ---
 function handlePostProject(event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[placeholder*="Responsive"]').value;
-    const category = document.querySelector('select').value;
-    const budget = document.querySelector('input[placeholder="5000"]').value;
-    const desc = document.querySelector('textarea').value;
-    const skills = document.querySelector('input[placeholder*="React"]').value;
+    // Humne IDs use ki hain taaki exact data mile
+    const title = document.getElementById('proj-title').value;
+    const category = document.getElementById('proj-category').value;
+    const budget = document.getElementById('proj-budget').value;
+    const desc = document.getElementById('proj-desc').value;
+    const skills = document.getElementById('proj-skills').value;
 
     const newProject = {
         id: Date.now(),
@@ -31,72 +20,92 @@ function handlePostProject(event) {
         applicants: 0
     };
 
-    let projects = JSON.parse(localStorage.getItem('projects')) || [];
+    // Main Projects Array
+    let projects = JSON.parse(localStorage.getItem('allProjects')) || [];
     projects.push(newProject);
-    localStorage.setItem('projects', JSON.stringify(projects));
+    localStorage.setItem('allProjects', JSON.stringify(projects));
 
-    // Client ke project count ko update karna
-    let clientStats = JSON.parse(localStorage.getItem('clientStats')) || { totalProjects: 4 };
-    clientStats.totalProjects += 1;
-    localStorage.setItem('clientStats', JSON.stringify(clientStats));
-
-    alert("🚀 Project Live ho gaya hai!");
+    alert("🚀 Project Published Successfully!");
     window.location.href = 'client-dashboard.html';
 }
 
-// --- 3. PROJECT FEED & APPLICATIONS (For project-feed.html) ---
-function loadProjectFeed() {
-    const feedGrid = document.querySelector('.feed-grid');
-    if (!feedGrid) return;
+// --- 2. LOAD DATA ON DIFFERENT PAGES ---
+function loadPageData() {
+    const projects = JSON.parse(localStorage.getItem('allProjects')) || [];
 
-    const projects = JSON.parse(localStorage.getItem('projects')) || [];
-    
-    // Naye projects ko list mein dikhana
-    projects.reverse().forEach(proj => {
-        const card = `
-            <div class="project-card" data-aos="fade-up">
-                <div class="project-details">
-                    <h2 style="margin: 0;">${proj.title}</h2>
-                    <p style="color: var(--grey); margin: 10px 0;">${proj.desc}</p>
-                    <div class="tags"><span class="tag">${proj.category}</span></div>
-                </div>
-                <div style="text-align: right;">
-                    <h3 style="color: var(--dark);">₹${proj.budget}</h3>
-                    <button class="btn-apply" onclick="applyToProject('${proj.title}', ${proj.id})">Apply Now</button>
-                </div>
-            </div>`;
-        feedGrid.insertAdjacentHTML('afterbegin', card);
-    });
+    // A. Client Dashboard Stats
+    const clientCount = document.getElementById('client-project-count');
+    if (clientCount) {
+        clientCount.innerText = 4 + projects.length; // 4 static + new ones
+    }
+
+    // B. Student Dashboard Stats
+    const studentCount = document.getElementById('student-app-count');
+    if (studentCount) {
+        const apps = localStorage.getItem('appliedCount') || 3;
+        studentCount.innerText = apps;
+    }
+
+    // C. My Projects List (client side)
+    const myProjectsList = document.getElementById('my-projects-list');
+    if (myProjectsList && projects.length > 0) {
+        // Purana content clear nahi karenge kyunki static rows bhi hain
+        projects.forEach(proj => {
+            const row = `
+                <div class="item-row" data-aos="fade-up">
+                    <div class="item-details">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <h4>${proj.title}</h4>
+                            <span class="status-badge status-accepted">Active</span>
+                        </div>
+                        <div class="project-stats-row">
+                            <span class="mini-stat"><i class="fas fa-users"></i> 0 Applicants</span>
+                            <span class="mini-stat"><i class="fas fa-wallet"></i> ₹${proj.budget}</span>
+                            <span class="mini-stat"><i class="fas fa-calendar"></i> Posted Today</span>
+                        </div>
+                    </div>
+                    <div class="action-btns">
+                        <button class="btn-view-apps">View Proposals</button>
+                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>`;
+            myProjectsList.insertAdjacentHTML('afterbegin', row);
+        });
+    }
+
+    // D. Project Feed (student side)
+    const feedContainer = document.getElementById('project-feed-container');
+    if (feedContainer && projects.length > 0) {
+        projects.forEach(proj => {
+            const card = `
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-details">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <img src="https://ui-avatars.com/api/?name=Adarsh&background=eff6ff&color=2563eb" style="width: 40px; border-radius: 8px;">
+                            <span style="font-weight: 600; color: var(--grey);">Client: Adarsh Shukla</span>
+                        </div>
+                        <h2 style="margin: 0;">${proj.title}</h2>
+                        <p style="color: var(--grey); max-width: 600px; margin-top: 10px;">${proj.desc}</p>
+                        <div class="tags"><span class="tag">${proj.category}</span><span class="tag">New</span></div>
+                    </div>
+                    <div style="text-align: right;">
+                        <h3 style="margin: 0 0 10px 0; color: var(--dark);">₹${proj.budget}</h3>
+                        <button class="btn-apply" onclick="applyToProject('${proj.title}')">Apply Now</button>
+                    </div>
+                </div>`;
+            feedContainer.insertAdjacentHTML('afterbegin', card);
+        });
+    }
 }
 
-function applyToProject(title, id) {
-    // Application count badhana
-    let appCount = parseInt(localStorage.getItem('studentApps')) || 3;
-    localStorage.setItem('studentApps', appCount + 1);
-
+// --- 3. APPLY LOGIC ---
+function applyToProject(title) {
+    let currentApps = parseInt(localStorage.getItem('appliedCount')) || 3;
+    localStorage.setItem('appliedCount', currentApps + 1);
+    
     alert("✅ Applied successfully for: " + title);
     window.location.href = 'student-dashboard.html';
 }
 
-// --- 4. DASHBOARD STATS UPDATER ---
-function updateDashboards() {
-    // Client Dashboard Stats
-    if (window.location.pathname.includes('client-dashboard')) {
-        const stats = JSON.parse(localStorage.getItem('clientStats')) || { totalProjects: 4 };
-        const statElement = document.querySelector('.stat-card.blue h3');
-        if (statElement) statElement.innerText = stats.totalProjects;
-    }
-
-    // Student Dashboard Stats
-    if (window.location.pathname.includes('student-dashboard')) {
-        const appCount = localStorage.getItem('studentApps') || 3;
-        const statElement = document.querySelector('.stat-card.blue h3');
-        if (statElement) statElement.innerText = appCount;
-    }
-}
-
-// Page Load hote hi functions chalana
-document.addEventListener('DOMContentLoaded', () => {
-    loadProjectFeed();
-    updateDashboards();
-});
+// Page Load hote hi sab execute karein
+document.addEventListener('DOMContentLoaded', loadPageData);
